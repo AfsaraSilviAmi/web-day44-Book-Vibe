@@ -5,7 +5,7 @@ const NavBar = () => {
     const links = (
         <>
         <NavLink to={"/"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Home</NavLink>
-        <NavLink to={"/books"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Listed Books</NavLink>
+        <NavLink to={"/listBooks"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Listed Books</NavLink>
         <NavLink to={"/pages-to-read"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Pages to Read</NavLink>
         </>
     )

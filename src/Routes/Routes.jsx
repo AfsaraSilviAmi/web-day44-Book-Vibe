@@ -3,6 +3,7 @@ import MainLayout from "../MainLayout/MainLayout";
 import HomePage from "../pages/Homepage/HomePage";
 import ErrorPage from "../pages/ErrorPage";
 import BookDetails from "../pages/BookDetails/BookDetails";
+import ListOfBooks from "../pages/Book/ListOfBooks";
 
 export const router = createBrowserRouter([
   {path:'/',
@@ -11,6 +12,10 @@ export const router = createBrowserRouter([
         {
             index:true,
             element:<HomePage></HomePage>
+        },
+        {
+         path:"/listBooks",
+         Component: ListOfBooks
         },
         {
             path:"/bookDetails/:id",
