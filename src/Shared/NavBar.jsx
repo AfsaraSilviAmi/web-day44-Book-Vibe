@@ -6,11 +6,11 @@ const NavBar = () => {
         <>
         <NavLink to={"/"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Home</NavLink>
         <NavLink to={"/listBooks"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Listed Books</NavLink>
-        <NavLink to={"/pages-to-read"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Pages to Read</NavLink>
+        <NavLink to={"/pagesToRead"} className={({isActive})=> `${isActive? "font-bold text-green-400 border border-green-400 rounded-xl px-3": ""}`}>Pages to Read</NavLink>
         </>
     )
     return (
-        <div className='bg-base-100 shadow-sm'>
+        <div className='bg-base-100 shadow-sm sticky top-0 z-50'>
             <div className="navbar container mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
