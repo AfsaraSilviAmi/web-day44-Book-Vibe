@@ -2,9 +2,19 @@ import React, { useContext } from 'react';
 import BookCard from '../Homepage/BookCard';
 import { BookContext } from '../../Context/BookProvider';
 
-const ReadList = () => {
+const ReadList = ({sortingType}) => {
       const {storeBook} = useContext(BookContext)
-      if(storeBook.length === 0){
+      
+     let filteredReadList = storeBook;
+
+     if(sortingType === "pages"){
+        filteredReadList = [...storeBook].sort((a,b)=> a.totalPages - b.totalPages)
+     }
+     else if(sortingType === "rating"){
+        filteredReadList = [...storeBook].sort((a,b)=>a.rating - b.rating)
+     }
+       
+      if(filteredReadList.length === 0){
         return(
          <div className='flex justify-center items-center h-[50vh]'>
             <h1 className='text-center font-bold text-xl'>No Books Added to Read List</h1>
@@ -16,7 +26,7 @@ const ReadList = () => {
         
         <div className='grid md:grid-cols-3'>
             {
-                storeBook.map(book => <BookCard book ={book}></BookCard>)
+                filteredReadList.map(book => <BookCard book ={book}></BookCard>)
             }
         </div>
     );
